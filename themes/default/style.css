@@ -1,0 +1,692 @@
+/* Default theme - Modern sidebar layout
+ * A contemporary design with sidebar, Inter font, and spacious layout
+ */
+
+html:root {
+  --ink: #1a1a1a !important;
+  --ink-dim: #666666 !important;
+  --ink-muted: #999999 !important;
+  --line: #f8f9fa !important;
+  --box: #ffffff !important;
+  --bg: #f8f9fa !important;
+  --accent: #2563eb !important;
+  --accent-hover: #1d4ed8 !important;
+  --accent-dim: rgba(37,99,235,0.1) !important;
+  
+  /* Scrollbar colors */
+  --scrollbar-track: #f1f5f9 !important;
+  --scrollbar-thumb: #cbd5e1 !important;
+  --scrollbar-thumb-hover: #94a3b8 !important;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+/* Override base styles with sans-serif */
+body,
+.thread-form,
+.reply-section,
+.thread-form__label,
+.reply-section__title,
+.thread-form__input,
+.thread-form__textarea,
+.reply-form__textarea,
+.thread-form__help,
+.reply-form__help,
+.forum-insights__title,
+.forum-insight__label,
+.thread-group__label,
+.thread-group__meta,
+.thread-item__meta,
+.thread-item__badge,
+.thread-username,
+.post-meta,
+.profile-header__meta,
+.profile-section__title,
+.admin-stat-card__label,
+.admin-form__label,
+.admin-nav__link,
+.admin-section__link,
+.admin-list-item__meta,
+.admin-list-item__action,
+.admin-table th,
+.admin-table__action,
+.admin-badge,
+.search-form__checkbox,
+.search-results__title,
+.search-result__type,
+.search-result__meta {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+}
+
+/* Override backgrounds and borders */
+.forum-insights,
+.thread-first-post,
+.online-section,
+.profile-edit-form textarea,
+.thread-form,
+.reply-section,
+.theme-selector,
+.theme-actions,
+.theme-editor__main,
+.theme-form,
+.theme-info,
+.admin-stat-card,
+.admin-section,
+.search-form {
+  background: #f8f9fa !important;
+  border-color: #e2e8f0 !important;
+}
+
+.post,
+.profile-thread,
+.admin-list-item,
+.search-result {
+  border-color: #e2e8f0 !important;
+}
+
+/* Hide default elements that conflict with modern layout */
+.sitebar,
+.main,
+.footer,
+.online-section {
+  display: none !important;
+}
+
+/* Hide rank numbers in default theme */
+.thread-item__rank {
+  display: none !important;
+}
+
+.thread-group--top .thread-item {
+  padding-left: 0 !important;
+}
+
+/* Modern Layout */
+.modern-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "main sidebar-top"
+    "main sidebar-bottom"
+    "footer footer";
+  gap: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.modern-sidebar--top {
+  grid-area: sidebar-top;
+  border-bottom: none;
+}
+
+.modern-sidebar--top:empty,
+.modern-sidebar--top:has(.modern-sidebar-container:empty) {
+  display: none;
+}
+
+.modern-sidebar--bottom {
+  grid-area: sidebar-bottom;
+  border-top: none;
+}
+
+@media (max-width: 968px) {
+  .modern-layout {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modern-header {
+    order: 1;
+  }
+  
+  .modern-sidebar--top {
+    order: 2;
+  }
+  
+  .modern-main {
+    order: 3;
+  }
+  
+  .modern-sidebar--bottom {
+    order: 4;
+  }
+  
+  .modern-footer {
+    order: 5;
+  }
+}
+
+/* Modern Header */
+.modern-header {
+  grid-area: header;
+  background: #ffffff;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.modern-header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.modern-header__brand {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.modern-logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.modern-logo:hover {
+  color: var(--accent-hover);
+}
+
+.modern-tagline {
+  font-size: 13px;
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+.modern-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.modern-nav__spacer {
+  flex: 1;
+}
+
+.modern-nav__link {
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--ink-dim);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.modern-nav__link:hover {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.modern-nav__link--icon {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modern-nav__link--primary {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.modern-nav__link--primary:hover {
+  background: var(--accent-hover);
+  color: #ffffff;
+}
+
+.modern-nav__link--admin {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--accent);
+}
+
+.modern-nav__link--admin:hover {
+  background: rgba(37, 99, 235, 0.15);
+}
+
+.modern-nav__link--secondary {
+  color: var(--ink-muted);
+}
+
+/* Modern Main */
+.modern-main {
+  grid-area: main;
+  padding: 2rem;
+  background: #ffffff;
+}
+
+.modern-container {
+  max-width: 100%;
+}
+
+/* Modern Sidebar */
+.modern-sidebar {
+  background: #ffffff;
+  border-left: 1px solid var(--line);
+}
+
+@media (max-width: 968px) {
+  .modern-sidebar {
+    border-left: none;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+.modern-sidebar-container {
+  background: #ffffff;
+  height: 100%;
+}
+
+.modern-sidebar-section {
+  padding: 20px;
+}
+
+.modern-sidebar-section + .modern-sidebar-section {
+  border-top: 1px solid var(--line);
+}
+
+.modern-sidebar--bottom .modern-sidebar-section:first-child {
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.modern-sidebar-section__title {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-dim);
+  margin: 0 0 16px 0;
+}
+
+.modern-sidebar-section__content {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.modern-sidebar-section__content .presence-name {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.modern-sidebar-section__content .presence-name:hover {
+  text-decoration: underline;
+}
+
+/* Modern Sidebar Navigation */
+.modern-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.modern-sidebar-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--ink-dim);
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.modern-sidebar-nav__link:hover {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.modern-sidebar-nav__link svg {
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.modern-sidebar-nav__link:hover svg {
+  opacity: 1;
+}
+
+/* Modern Stats */
+.modern-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modern-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: var(--bg);
+  border-radius: 8px;
+}
+
+.modern-stat__value {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.modern-stat__label {
+  font-size: 12px;
+  color: var(--ink-dim);
+  text-align: right;
+  flex: 1;
+  margin-left: 12px;
+}
+
+/* Hide forum insights from main content */
+.forum-insights {
+  display: none !important;
+}
+
+/* Modern Footer */
+.modern-footer {
+  grid-area: footer;
+  background: #ffffff;
+  border-top: 1px solid var(--line);
+  padding: 2rem;
+  text-align: center;
+}
+
+.modern-footer__text {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink-muted);
+}
+
+/* Thread items - clean list style */
+.thread-item {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid #f8f9fa !important;
+  border-radius: 0 !important;
+  padding: 24px 0 !important;
+  margin-bottom: 0 !important;
+  box-shadow: none !important;
+  transition: all 0.15s ease !important;
+}
+
+.thread-item:hover {
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  border-color: #f8f9fa !important;
+}
+
+.thread-item:hover .thread-item__title {
+  color: var(--accent) !important;
+}
+
+.thread-item:last-child {
+  border-bottom: none !important;
+}
+
+/* Thread groups */
+.thread-group {
+  margin-bottom: 32px;
+  border-radius: 8px;
+  background: transparent !important;
+}
+
+.thread-group__header {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  padding: 12px 20px;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #e2e8f0;
+  border-bottom: none;
+}
+
+.thread-group__label {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #475569 !important;
+  margin: 0 !important;
+  letter-spacing: 0.05em;
+}
+
+.thread-group__meta {
+  font-size: 12px !important;
+  color: #94a3b8 !important;
+  font-weight: 600 !important;
+  background: #ffffff;
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.thread-list {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 0 20px;
+  list-style: none;
+  margin: 0;
+}
+
+.thread-list--top {
+  border-top: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+/* Thread item meta */
+.thread-item__meta {
+  font-size: 13px !important;
+  color: #6b7280 !important;
+  font-weight: 400 !important;
+}
+
+.thread-item__title {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #111827 !important;
+  margin-bottom: 6px !important;
+}
+
+
+.thread-username {
+  color: var(--accent) !important;
+  font-weight: 600 !important;
+}
+
+.thread-item__badge {
+  font-size: 11px !important;
+  padding: 2px 8px !important;
+  border-radius: 4px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em;
+}
+
+.thread-item__badge--replied {
+  background: #dbeafe !important;
+  color: #1e40af !important;
+}
+
+.thread-item__badge--started {
+  background: #d1fae5 !important;
+  color: #065f46 !important;
+}
+
+.meta {
+  font-size: 13px !important;
+  color: #6b7280 !important;
+}
+
+/* Thread page title */
+.thread-title,
+.page-header__title {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Posts */
+.thread-first-post,
+.post-item {
+  background: #ffffff !important;
+  border: 1px solid #f8f9fa !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  padding: 24px !important;
+  margin-bottom: 16px !important;
+}
+
+/* Forms */
+.thread-form,
+.search-form {
+  background: #ffffff !important;
+  border: 1px solid #f8f9fa !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  padding: 24px !important;
+}
+
+/* Profile header */
+.profile-header {
+  background: #ffffff !important;
+  border: 1px solid #f8f9fa !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+/* Admin theme editor - force white backgrounds */
+.theme-selector,
+.theme-actions,
+.theme-editor__main,
+.theme-form,
+.theme-info {
+  background: #ffffff !important;
+}
+
+/* Admin list items - force white backgrounds */
+.admin-list-item {
+  background: #ffffff !important;
+  border-color: #f8f9fa !important;
+}
+
+/* Theme editor layout */
+.theme-editor__top {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 24px !important;
+}
+
+/* Remove double border on theme editor main and match width */
+.theme-editor__main {
+  border: none !important;
+  width: 100% !important;
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+/* Expand container width for admin pages */
+.modern-main .container {
+  max-width: 1200px !important;
+}
+
+/* Make textarea match width of cards above and fix scrollbar */
+.theme-form,
+.theme-form__section,
+.theme-form__textarea,
+.admin-form {
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+}
+
+.theme-form__textarea::-webkit-scrollbar {
+  width: 12px !important;
+}
+
+.theme-form__textarea::-webkit-scrollbar-track {
+  background: #f1f5f9 !important;
+}
+
+.theme-form__textarea::-webkit-scrollbar-thumb {
+  background: #cbd5e1 !important;
+  border-radius: 6px !important;
+}
+
+.theme-form__textarea::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8 !important;
+}
+
+/* Buttons with more prominent style */
+.btn--primary {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 1px 2px rgba(37,99,235,0.2);
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover) !important;
+  border-color: var(--accent-hover) !important;
+  box-shadow: 0 2px 4px rgba(37,99,235,0.3);
+  transform: translateY(-1px);
+}
+
+/* Inputs with subtle shadows */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea,
+.thread-form__input,
+.thread-form__textarea {
+  background: #ffffff !important;
+  border: 1px solid var(--line) !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05) inset;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus,
+.thread-form__input:focus,
+.thread-form__textarea:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+  outline: none;
+}
+
+/* Username styling */
+.thread-username {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Page header */
+.page-header {
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--line);
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{page_title} · {site_name}</title>
+  <link rel="stylesheet" href="/inc/fineprint/packs/base.css">
+  <link rel="stylesheet" href="/themes/{theme}/style.css">
+  <script src="https://unpkg.com/tiny-markdown-editor/dist/tiny-mde.min.js"></script>
+</head>
+<body>
+
+<div class="modern-layout">
+  <header class="modern-header">
+    <div class="modern-header__inner">
+      <div class="modern-header__brand">
+        <a class="modern-logo" href="/index.php">{site_name}</a>
+      </div>
+      <nav class="modern-nav">
+        [if:user]
+          <a href="/search.php" class="modern-nav__link modern-nav__link--icon" aria-label="search">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+              <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"></circle>
+              <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"></line>
+            </svg>
+          </a>
+          <a href="/profile.php" class="modern-nav__link">Profile</a>
+          <a href="/logout.php" class="modern-nav__link modern-nav__link--secondary">Sign Out</a>
+          [if:is_admin]
+            <a href="/admin/index.php" class="modern-nav__link modern-nav__link--admin">Admin</a>
+          [/if:is_admin]
+        [/if:user]
+        [if:guest]
+          <a href="/login.php" class="modern-nav__link">Sign In</a>
+          <a href="/register.php" class="modern-nav__link modern-nav__link--primary">Register</a>
+        [/if:guest]
+      </nav>
+    </div>
+  </header>
+
+  <main class="modern-main">
+    <div class="modern-container">
+      {content}
+    </div>
+  </main>
+  
+  <aside class="modern-sidebar modern-sidebar--top">
+    <div class="modern-sidebar-container">
+    </div>
+  </aside>
+  
+  <aside class="modern-sidebar modern-sidebar--bottom">
+    <div class="modern-sidebar-container">
+      [if:has_stats]
+        <section class="modern-sidebar-section">
+          <h3 class="modern-sidebar-section__title">Activity</h3>
+          <div class="modern-stats">
+            <div class="modern-stat">
+              <div class="modern-stat__value">{stat_threads}</div>
+              <div class="modern-stat__label">New Threads (24H)</div>
+            </div>
+            <div class="modern-stat">
+              <div class="modern-stat__value">{stat_posts}</div>
+              <div class="modern-stat__label">New Replies (24H)</div>
+            </div>
+            <div class="modern-stat">
+              <div class="modern-stat__value">{stat_members}</div>
+              <div class="modern-stat__label">New Members (7D)</div>
+            </div>
+            <div class="modern-stat">
+              <div class="modern-stat__value">{stat_active}</div>
+              <div class="modern-stat__label">Active (24H)</div>
+            </div>
+          </div>
+        </section>
+      [/if:has_stats]
+      
+      [if:has_online_users]
+        <section class="modern-sidebar-section">
+          <h3 class="modern-sidebar-section__title">Online Now</h3>
+          <div class="modern-sidebar-section__content">
+            {online_users}
+          </div>
+        </section>
+      [/if:has_online_users]
+    </div>
+  </aside>
+
+  <footer class="modern-footer">
+    <p class="modern-footer__text">Built with <a href="https://github.com/andrewowest/noindex" target="_blank" rel="noopener">Noindex</a> × <a href="https://github.com/andrewowest/fineprint" target="_blank" rel="noopener">Fineprint</a></p>
+  </footer>
+</div>
+
+{footer_scripts}
+
+</body>
+</html>
