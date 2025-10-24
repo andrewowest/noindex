@@ -261,4 +261,4 @@ For issues, questions, or feature requests, please open an issue on GitHub.
 
 ---
 
-**Noindex** - Invite-only communities. A third place.
+**noindex** - Invite-only communities. A third place.
