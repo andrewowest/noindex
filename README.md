@@ -86,7 +86,7 @@ The invite-only model creates:
 
 ## Theming
 
-Noindex uses the **Fineprint** templating system with `[block]` syntax.
+Noindex uses the [Fineprint](https://github.com/andrewowest/fineprint) templating system with `[block]` syntax.
 
 ### Theme Structure
 
