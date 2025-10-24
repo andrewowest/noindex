@@ -21,8 +21,8 @@ Noindex is designed for **intentional communities**. Not viral growth. Not engag
 
 The invite-only model creates:
 - **Accountability** - Your invite tree matters
-- **Quality over scale** - Anti-viral, pro-intimacy
-- **Trust** - Small, intentional circles
+- **Quality over scale** - Intentionally small, pro-intimacy
+- **Trust** - Small circles, friends of friends
 - **Privacy** - Content stays within the community
 
 ## Requirements
