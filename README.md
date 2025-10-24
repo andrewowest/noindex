@@ -1,6 +1,6 @@
 # noindex
 
-The internet used to feel like a neighborhood, and noindex is built in that spirit. It’s invite-only, anti-scalable, and designed to be your third place on the web.
+The internet used to feel like a neighborhood, and noindex is built in that spirit. It’s invite-only, anti-scalable, and designed to be your "third place" on the web.
 
 ## Features
 
