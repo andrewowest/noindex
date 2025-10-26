@@ -1,6 +1,6 @@
-# noindex
+# Noindex
 
-The internet used to feel like a neighborhood, and noindex is built in that spirit. It’s invite-only, anti-scalable, and designed to be your "third place" on the web.
+The internet used to feel like a neighborhood, and Noindex is built in that spirit. It’s invite-only, anti-scalable, and designed to be your "third place" on the web.
 
 ## Features
 
@@ -17,7 +17,7 @@ The internet used to feel like a neighborhood, and noindex is built in that spir
 
 ## Philosophy
 
-Noindex is designed for **intentional communities**. Not viral growth. Not engagement metrics. Just people vouching for people, creating trusted spaces for real conversation.
+Noindex is designed for intentionally small communities. Not viral growth. Not engagement metrics. Just people vouching for people, creating trusted spaces for real conversation.
 
 The invite-only model creates:
 - **Accountability** - Your invite tree matters
@@ -261,4 +261,4 @@ For issues, questions, or feature requests, please open an issue on GitHub.
 
 ---
 
-**noindex** - Invite-only communities. A third place.
+**Noindex** - Invite-only communities. A third place.
