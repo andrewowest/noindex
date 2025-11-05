@@ -50,7 +50,7 @@ The invite-only model creates:
 
 5. **Get your admin invite code**:
    ```bash
-   sqlite3 data/forum.db "SELECT invite_code FROM users WHERE username='andrew';"
+   sqlite3 data/forum.db "SELECT invite_code FROM users WHERE username='admin';"
    ```
 
 6. **Configure settings** in `inc/common.php`:
